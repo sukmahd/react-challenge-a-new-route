@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import PropTypes from 'prop-types';
 import HeroAttr from '../components/HeroAttr'
 import { Link } from 'react-router-dom'
 
@@ -19,7 +17,7 @@ class Hero extends Component {
 
   render () {
     let hero = this.state.hero
-    console.log(hero);
+    console.log(hero)
     return (
       <div className="row justify-content-center">
         <div className="col-md-5">
@@ -37,7 +35,6 @@ class Hero extends Component {
               <hr/>
               <h5>Primary Attribute <span  className="badge badge-danger">{hero.primary_attr}</span></h5>
               <HeroAttr hero={hero}></HeroAttr>
-              <p className="card-text"><small className="text-muted">Last updated  mins ago</small></p>
               <Link to={{
                   pathname: `/`,
                 }}>

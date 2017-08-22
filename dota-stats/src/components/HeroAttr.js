@@ -16,6 +16,18 @@ function HeroAttr(props) {
           <td>{props.hero.base_str} + {props.hero.str_gain}</td>
           <td>{props.hero.base_int} + {props.hero.int_gain}</td>
         </tr>
+        <tr>
+          <td colSpan="3"> Movement Speed : {props.hero.move_speed}</td>
+        </tr>
+        <tr>
+          <td colSpan="3">Base Attack : {props.hero.base_attack_min} - {props.hero.base_attack_max}</td>
+        </tr>
+        <tr>
+          <td colSpan="3">Base Armor : {props.hero.base_armor}</td>
+        </tr>
+        <tr>
+          <td colSpan="3">Attack Range : {props.hero.attack_range}</td>
+        </tr>
       </tbody>
     </table>
   )
