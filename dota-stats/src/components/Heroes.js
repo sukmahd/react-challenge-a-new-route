@@ -1,14 +1,25 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router,  Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 let marginRight = {
-  marginRight: '2px'
+  marginRight: '2px',
+  backgroundColor: "#b52517"
 }
 
 let marginStyle = {
   marginBottom: "10px"
 };
+
+
+let removeBorder = {
+  borderColor: "#242F39"
+}
+
+let warnaCard = {
+  backgroundColor: "#242F39",
+  color: "white"
+}
 
 class Heroes extends Component {
   constructor () {
@@ -25,25 +36,26 @@ class Heroes extends Component {
             this.state.heroes.map((hero) => {
               let img = 'https://api.opendota.com' + hero.img
               return (
-                <div className="col-sm-4 col-md-3" style={marginStyle} key={hero.id}>
-                  <div className="card text-center">
+                <div className="col-sm-3 col-md-2" style={marginStyle} key={hero.id}>
+                  <div className="card text-center" style={removeBorder}>
                     <img className="card-img-top" src={img} alt="Card image cap"/>
-                    <div className="card-body">
-                      <h4 className="card-title">{hero.localized_name}</h4>
+                  <div className="card-body" style={warnaCard}>
+                      <h5 className="card-title">{hero.localized_name}</h5>
                       {
                         hero.roles.map((role, index) => {
                           return (
-                            <span key={index} style={marginRight} className="badge badge-danger">{role}</span>
+                            <span key={index} style={marginRight} className="badge">{role}</span>
                           )
                         })
                       }
-                      <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                       <Link to={{
-                           pathname: `/hero/${hero.id}`,
-                           state: { hero: hero }
-                         }}>
-                         <a href="" className="btn btn-primary ">Details</a>
-                       </Link>
+                    </div>
+                    <div  style={warnaCard} className="card-footer">
+                      <Link to={{
+                          pathname: `/hero/${hero.id}`,
+                          state: { hero: hero }
+                        }}>
+                        <a href="" className="btn btn-primary btn-sm">Details</a>
+                    </Link>
                     </div>
                   </div>
                 </div>

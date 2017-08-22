@@ -1,7 +1,7 @@
 import React from 'react'
 
 let putih = {
-  backgroundColor: 'white'
+  backgroundColor: '#2E3740'
 }
 
 function Header () {
